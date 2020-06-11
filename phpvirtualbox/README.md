@@ -1,4 +1,4 @@
-# docker-phpvirtualbox
+# phpVirtualBox
 
 This is a fork of [jazzdd86/phpvirtualbox](https://hub.docker.com/r/jazzdd/phpvirtualbox/), because it is not very up to date and there are no further configuration options.
 
