@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  eos-mainnet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eos-mainnet:latest
+    hostname: eos-mainnet
+    networks:
+      - eos-mainnet-net
+    deploy:
+      mode: replicated
+      replicas: 1
+    restart: unless-stopped
+    ports:
+      - 15432:5432
+    container_name: eos-mainnet
+
+networks:
+  eos-mainnet-net:
+    external:
+      name: eos-mainnet-net
+
