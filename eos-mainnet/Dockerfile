@@ -24,6 +24,8 @@ RUN set -eux; \
       echo "listen_addresses='*'" >> /etc/postgresql/12/main/postgresql.conf;
 
 ## for Eos
+ENV ENABLE_HISTORY_TOOLS=false
+
 RUN set -eux; \
       apt-get update; \
       apt-get install -y libatomic1 libssl1.0.0; \

@@ -12,7 +12,12 @@ services:
       mode: replicated
       replicas: 1
     restart: unless-stopped
+    environment:
+      - ENABLE_HISTORY_TOOLS=true
     ports:
+      - 18888:8888
+      - 18080:8080
+      - 19876:9876
       - 15432:5432
     container_name: eos-mainnet
 
