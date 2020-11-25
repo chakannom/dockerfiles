@@ -10,13 +10,6 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-      resources:
-        limits:
-          cpus: '3'
-          memory: 8G
-        reservations:
-          cpus: '3'
-          memory: 8G
     restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime:ro
