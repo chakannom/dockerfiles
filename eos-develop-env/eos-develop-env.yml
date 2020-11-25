@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  eos-develop-env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eos-develop-env:latest
+    hostname: eos-develop-env
+    network_mode: bridge
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '3'
+          memory: 8G
+        reservations:
+          cpus: '3'
+          memory: 8G
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./development:/home/eosio/development
+    container_name: eos-develop-env
+
