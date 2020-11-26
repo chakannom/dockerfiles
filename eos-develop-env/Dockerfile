@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN set -eux; \
       apt-get update; \
-      apt-get install -y sudo git vim ;
+      apt-get install -y sudo git gdb vim ;
 
 # explicitly set user/group IDs
 RUN set -eux; \

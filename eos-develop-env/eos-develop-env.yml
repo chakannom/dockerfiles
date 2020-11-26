@@ -14,6 +14,6 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./development:/home/eosio/development
-      - ./node:/home/eosio/node 
+      - ./node:/home/eosio/node
     container_name: eos-develop-env
 
