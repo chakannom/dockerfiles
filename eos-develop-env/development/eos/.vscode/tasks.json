@@ -1,0 +1,40 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "nodeos_build",
+            "type": "shell",
+            "command": "cd build && make nodeos -j$(nproc)",
+            "args": [
+            ],
+            "group": "build",
+            "presentation": {
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "keosd_build",
+            "type": "shell",
+            "command": "cd build && make keosd -j$(nproc)",
+            "args": [
+            ],
+            "group": "build",
+            "presentation": {
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "cleos_build",
+            "type": "shell",
+            "command": "cd build && make cleos -j$(nproc)",
+            "args": [
+            ],
+            "group": "build",
+            "presentation": {
+            },
+            "problemMatcher": []
+        }
+    ]
+}
