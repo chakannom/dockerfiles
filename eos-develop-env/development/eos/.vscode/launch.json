@@ -11,47 +11,14 @@
             "program": "${workspaceFolder}/build/programs/nodeos/nodeos",
             "args": [
                 "--agent-name='EOS Debug Node'",
+                // "--logconf=${env:HOME}/node/config/logging.json",
                 "--genesis-json=${env:HOME}/node/config/genesis.json",
                 "--config-dir=${env:HOME}/node/config",
                 "--data-dir=${env:HOME}/node/data",
                 "--disable-replay-opts",
-                "--http-server-address=0.0.0.0:8888",
+                "--http-server-address=0.0.0.0:8890",
                 "--p2p-listen-endpoint=0.0.0.0:9876",
-                "--p2p-peer-address=peer.eosn.io:9876"
-                // "--disable-replay-opts",
-                // "--plugin",
-                // "eosio::chain_api_plugin",
-                // "--plugin",
-                // "eosio::chain_plugin",
-                // "--chain-threads=2",
-                // "--contracts-console",
-                // "--wasm-runtime=eos-vm",
-                // "--eos-vm-oc-enable",
-                // "--plugin",
-                // "eosio::http_plugin",
-                // "--http-server-address=0.0.0.0:8888",
-                // "--access-control-allow-origin=*",
-                // "--access-control-allow-headers=Origin,X-Requested-With,Content-Type,Accept",
-                // "--http-validate-host=false",
-                // "--verbose-http-errors",
-                // "--http-threads=2",
-                // "--plugin",
-                // "eosio::producer_api_plugin",
-                // "--plugin",
-                // "eosio::producer_plugin",
-                // "--max-transaction-time=150000",
-                // "--plugin",
-                // "eosio::state_history_plugin",
-                // "--plugin",
-                // "eosio::net_api_plugin",
-                // "--plugin",
-                // "eosio::net_plugin",
-                // "--p2p-listen-endpoint=0.0.0.0:9876",
-                // "--p2p-peer-address=peer.eosn.io:9876",
-                // "--p2p-max-nodes-per-host=5",
-                // "--allowed-connection=any",
-                // "--agent-name=EOS_Debug_Node",
-                // "--max-clients=5"
+                "--p2p-peer-address=10.0.0.44:8888"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -63,7 +30,12 @@
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
-                }
+                },
+                {
+                    "description": "ignore SIG34",
+                    "text": "handle SIG34 nostop noprint pass", 
+                    "ignoreFailures": true
+                } 
             ]
         }
     ]
