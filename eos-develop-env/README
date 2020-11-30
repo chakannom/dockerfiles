@@ -1,3 +1,8 @@
 $ git clone https://github.com/EOSIO/eos
 $ git checkout tags/v2.0.7 
 $ git submodule update --init --recursive
+
+--
+
+Modify 'eosio_build_ubuntu.sh'
+--> line 14: 'clang' => 'clang-7'
