@@ -1,10 +1,10 @@
-FROM eosio/ci:eos-ubuntu-18.04-unpinned-7b10b946cd204d66af57afa5dbc703b7f0f7b7b4
+FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN set -eux; \
       apt-get update; \
-      apt-get install -y gdb;
+      apt-get install -y sudo git gdb clang-7 vim ;
 
 # explicitly set user/group IDs
 RUN set -eux; \
