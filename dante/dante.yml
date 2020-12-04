@@ -5,11 +5,17 @@ services:
       context: .
       dockerfile: Dockerfile
     image: dante:latest
-    ports:
-      - "1080:1080"
+    hostname: dante
+    network_mode: bridge
+    deploy:
+      mode: replicated
+      replicas: 1
+    restart: unless-stopped
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - ./data:/etc/dante
     tmpfs:
       - /run
-    restart: unless-stopped
+    ports:
+      - "1080:1080"
     container_name: dante
