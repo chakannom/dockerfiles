@@ -1,7 +1,10 @@
 version: "3.8"
 services:
   dante:
-    image: vimagick/dante
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dante:latest
     ports:
       - "1080:1080"
     volumes:
@@ -9,3 +12,4 @@ services:
     tmpfs:
       - /run
     restart: unless-stopped
+    container_name: dante
