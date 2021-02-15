@@ -142,6 +142,8 @@ $ firefox http://192.168.1.125/cgi-bin/luci/
 # | wan =>          | oox | oo |
 # | vpn => wan      | ooo | ox |
 ```
+# Reference
+https://github.com/vimagick/dockerfiles/tree/master/tinc
 
 [1]: http://tinc-vpn.org/
 [2]: https://www.digitalocean.com/community/tutorials/how-to-install-tinc-and-set-up-a-basic-vpn-on-ubuntu-14-04
