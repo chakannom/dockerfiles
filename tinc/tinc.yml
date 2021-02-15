@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  tinc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tinc:latest
+    hostname: tinc
+    network_mode: bridge
+    deploy:
+      mode: replicated
+      replicas: 1
+    restart: unless-stopped
+    environment:
+      - IP_ADDR=1.2.3.4
+      - ADDRESS=10.20.30.1
+      - NETMASK=255.255.255.0
+      - NETWORK=10.20.30.0/24
+      - RUNMODE=server
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./data:/etc/tinc
+    ports:
+      - "655:655/tcp"
+      - "655:655/udp"
+    cap_add:
+      - NET_ADMIN
+    dns: 8.8.8.8
+    container_name: tinc
